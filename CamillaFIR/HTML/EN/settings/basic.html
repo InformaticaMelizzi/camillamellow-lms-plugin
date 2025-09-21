@@ -1,0 +1,59 @@
+[% pageHeader = "PLUGIN_CAMILLAFIR" | string %]
+
+<div class="settingsSection">
+    <div class="prefHead">[% "PLUGIN_CAMILLAFIR_SETTINGS" | string %]</div>
+    
+    <form action="[% webroot %]plugins/CamillaFIR/settings/basic.html" method="post">
+        <div class="prefRow">
+            <label>[% "PLUGIN_CAMILLAFIR_ENABLED" | string %]</label>
+            <input type="checkbox" name="enabled" [% prefs.get('enabled') ? 'checked' : '' %]>
+        </div>
+        
+        <div class="prefRow">
+            <label>[% "PLUGIN_CAMILLAFIR_SAMPLERATE" | string %]</label>
+            <select name="samplerate">
+                <option value="768000" [% prefs.get('samplerate') == 768000 ? 'selected' : '' %]>768 kHz</option>
+                <option value="384000" [% prefs.get('samplerate') == 384000 ? 'selected' : '' %]>384 kHz</option>
+                <option value="192000" [% prefs.get('samplerate') == 192000 ? 'selected' : '' %]>192 kHz</option>
+                <option value="96000" [% prefs.get('samplerate') == 96000 ? 'selected' : '' %]>96 kHz</option>
+            </select>
+        </div>
+        
+        <div class="prefRow">
+            <label>[% "PLUGIN_CAMILLAFIR_CHUNKSIZE" | string %]</label>
+            <input type="number" name="chunksize" value="[% prefs.get('chunksize') %]" min="64" max="8192">
+        </div>
+        
+        <div class="prefRow">
+            <label>[% "PLUGIN_CAMILLAFIR_BYPASS" | string %]</label>
+            <input type="checkbox" name="bypass" [% prefs.get('bypass') ? 'checked' : '' %]>
+        </div>
+        
+        <div class="prefRow">
+            <input type="submit" name="saveSettings" value="[% 'SAVE' | string %]" class="stdclick">
+        </div>
+    </form>
+</div>
+
+<div class="settingsSection">
+    <div class="prefHead">[% "PLUGIN_CAMILLAFIR_FIR_FILTERS" | string %]</div>
+    <p>Upload your FIR .wav files created with REW:</p>
+    
+    <form action="[% webroot %]plugins/CamillaFIR/uploadfir" method="post" enctype="multipart/form-data">
+        <div class="prefRow">
+            <label>[% "PLUGIN_CAMILLAFIR_FIR_LEFT" | string %]</label>
+            <input type="file" name="upload_left" accept=".wav">
+            <span>[% prefs.get('fir_left') || "None" %]</span>
+        </div>
+        
+        <div class="prefRow">
+            <label>[% "PLUGIN_CAMILLAFIR_FIR_RIGHT" | string %]</label>
+            <input type="file" name="upload_right" accept=".wav">
+            <span>[% prefs.get('fir_right') || "None" %]</span>
+        </div>
+        
+        <div class="prefRow">
+            <input type="submit" value="[% "PLUGIN_CAMILLAFIR_UPLOAD_FIR" | string %]" class="stdclick">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<extensions>
+    <plugin name="CamillaFIR" creator="Informatica Melizzi" link="https://github.com/davemellow/camillafir-lms-plugin" maxTarget="*" minTarget="9.0" sha=""></plugin>
+</extensions>
