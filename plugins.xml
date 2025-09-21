@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
 <extensions>
-    <plugin name="CamillaFIR" creator="Informatica Melizzi" link="https://github.com/davemellow/camillafir-lms-plugin" maxTarget="*" minTarget="9.0" sha=""></plugin>
+    <plugin name="CamillaMellow" creator="Informatica Melizzi" 
+            link="https://github.com/InformaticaMelizzi/camillamellow-lms-plugin" 
+            url="https://raw.githubusercontent.com/InformaticaMelizzi/camillamellow-lms-plugin/main/packages/CamillaMellow-0.2.0.zip"
+            maxTarget="*" minTarget="9.0" sha="ee686e600cb0ddb82c3f45d826683587f8de3c00"></plugin>
 </extensions>
